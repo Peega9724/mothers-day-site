@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother's Day</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: pink;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-family: 'Brush Script MT', cursive;
+            color: #d6336c;
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 24px;
+            animation: floatUp 2s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Mother's Day</h1>
+    <p>
+        Hey mommies, today’s your day! You brought us into this world, and somehow didn’t send us back even after all the tantrums. 
+        We made you mommies by being the chaos you never asked for — and look at you, glowing! 
+        So kick your feet up, take a break (or try to), and enjoy the love (and noise). 
+        You’re superheroes in slippers. More love, more laughs, and less dishes today!
+    </p>
+
+    <button id="sendLoveBtn">Send Love</button>
+
+    <script>
+        document.getElementById('sendLoveBtn').addEventListener('click', () => {
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.textContent = '❤';
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.top = Math.random() * window.innerHeight + 'px';
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 2000);
+            }
+        });
+    </script>
+  <footer style="margin-top: 50px; font-size: 14px; color: #555;">
+    Created with love by Katlego Thato Peega
+</footer>
+</body>
+</html>
